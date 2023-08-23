@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_flutter_boilerplate/repository/login_repository/login_repoitory.dart';
-import 'package:my_flutter_boilerplate/utils/routes/routes_name.dart';
+
 import 'package:my_flutter_boilerplate/utils/utils.dart';
 
 class LoginController extends GetxController {

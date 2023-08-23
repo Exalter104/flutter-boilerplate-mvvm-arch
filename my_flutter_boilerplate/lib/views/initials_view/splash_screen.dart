@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_flutter_boilerplate/view_model/controller/splash_screen_controller.dart';

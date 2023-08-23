@@ -1,8 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_flutter_boilerplate/view_model/controller/auth_main_controller.dart';
 import 'package:my_flutter_boilerplate/views/auth_view/register_screen.dart';
 
 import 'login_screen.dart';
@@ -18,16 +20,16 @@ class _AuthMainScreenState extends State<AuthMainScreen>
     with TickerProviderStateMixin {
   TabController? tabController;
 
-  // @override
-  // void initState() {
-  //   @override
-  //   AuthMainScreenController authController =
-  //       Get.put(AuthMainScreenController());
+  @override
+  void initState() {
+    @override
+    AuthMainScreenController authController =
+        Get.put(AuthMainScreenController());
 
-  //   tabController = TabController(
-  //       initialIndex: authController.getIndex, length: 2, vsync: this);
-  //   super.initState();
-  // }
+    tabController = TabController(
+        initialIndex: authController.getIndex, length: 2, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,15 +90,15 @@ class _AuthMainScreenState extends State<AuthMainScreen>
                   controller: tabController,
                   children: const [LoginScreen(), RegisterationScreen()]),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 9.0),
+            const Padding(
+              padding: EdgeInsets.only(top: 9.0),
               child: InkWell(
                   // onTap: () {
                   //   // Add your URL here
                   //   String url = AppUrl.privacyPolicy;
                   //   launch(url);
                   // },
-                  child: const Text("Privacy policies")),
+                  child: Text("Privacy policies")),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.020,
