@@ -34,7 +34,19 @@ class NetworkApiResponse extends BaseApiServices {
 returnResponseJson(http.Response response) {
   switch (response.statusCode) {
     case 200:
-      break;
+      dynamic responseJsn = jsonDecode(response.body);
+      return responseJsn;
+    case 201:
+      dynamic responseJsn = jsonDecode(response.body);
+      return responseJsn;
+    case 400:
+      throw InvalidUrlException(response.body);
+    case 401:
+      throw InvalidTokenException(response.body);
+    case 500:
+      throw ServerException();
     default:
+      throw FetchDataException(
+          "Error while communicating  : ${response.statusCode.toString()}");
   }
 }
